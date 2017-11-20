@@ -1,10 +1,31 @@
 body
 {
   font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
+.clearfix::before, .clearfix::after
+{
+  display: block;
+  clear: both;
+  content: "";
 }
 .container{
   width: 1200px;
   margin: 0 auto;
+}
+a:visited, a:active, a:link
+{
+  text-decoration: none;
+  color: #000000;
+}
+a:hover
+{
+  color: #666666;
+}
+input[type="submit"]:hover
+{
+  opacity: 0.7;
+  cursor: pointer;
 }
 #beginning
 {
@@ -37,6 +58,10 @@ body
 {
   color: #27c7ab;
 }
+.b-mint
+{
+  background-color: #27c7ab;
+}
 .small
 {
   font-weight: 800;
@@ -51,6 +76,10 @@ body
   height: 21px;
   margin-top: 10px;
   margin-right: 40px;
+}
+.main-menu ul
+{
+  margin: 0;
 }
 .main-menu li
 {
@@ -136,20 +165,203 @@ input[type="submit"]
 /* -----------------SEKCJA MIDDLE---------------*/
 #middle
 {
-  height: 300px;
+  height: 350px;
   width: 100%;
 }
 
 #middle div[class*="middle"]
 {
   float: left;
-  border: solid black 1px;
   height: 252px;
-  width: 338px;
+  width: 355px;
+  margin-top: 30px;
+  position: relative;
 }
+#middle > div > div:first-of-type
+{
+  margin-left: 60px;
+}
+.mid-white
+{
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 62px;
+  width: 355px;
+  position: absolute;
+  top: 150px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.midline
+{
+  height: 7px;
+  width: 138px;
+  z-index: 3;
+  margin-bottom: 10px;
+}
+.middle-text
+{
+  width: 338px;
+  border: solid rgb(221, 221, 221) 1px;
+}
+.mid-text
+{
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 30px;
+  color: #565656;
+}
+.mid-text > h3
+{
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 20px;
+}
+
+/*SEKCJA PRICE LIST*/
 #price-list
 {
   height: 725px;
   width: 100%;
-  background-color: #e1e1e1;
+}
+.price-list-header, .price-list-content
+{
+  background-color: rgb(242, 242, 242);
+}
+.price-list-header
+{
+  height: 125px;
+  width: 100%;
+}
+.price-list-content
+{
+  height: 600px;
+  width: 100%;
+}
+/*sekcja footer*/
+#footer
+{
+  height: 657px;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+.form-header
+{
+  height: 125px;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+.form
+{
+  height: 400px;
+  width: 100%;
+}
+
+.longline
+{
+  height: 8px;
+  width: 320px;
+  margin-left: 60px;
+}
+h2
+{
+  color: #575757;
+  font-size: 22px;
+  font-weight: 500;
+  margin-left: 60px;
+  margin-bottom: 10px;
+  padding-top: 50px;
+}
+.left-form
+{
+  float: left;
+  width: 633px;
+  margin-left: 60px;
+  height: 400px;
+
+}
+.right-form
+{
+  float: left;
+  width: 350px;
+  margin-left: 40px;
+  height: 400px;
+}
+.form-cell
+{
+  width: 100%;
+  padding: 10px 0;
+}
+input[type="text"], input[type="email"]
+{
+  width: 633px;
+  height: 64px;
+  border-color: #27c7ab;
+  font-size: 33px;
+  color: rgb(231, 231, 231);
+  font-weight: 300;
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  padding-left: 10px;
+}
+textarea
+{
+  width: 633px;
+  height: 187px;
+  resize: none;
+  border-color: #27c7ab;
+  box-sizing: border-box;
+  font-size: 33px;
+  color: rgb(231, 231, 231);
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  padding-left: 10px;
+}
+.right-form > div >img
+{
+  margin-left: 40px;
+}
+.form-full > input[type="submit"]
+{
+  width: 343px;
+  height: 71px;
+  outline: none;
+  font-weight: 700;
+  font-size: 34px;
+}
+.checkbox
+{
+  padding: 10px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 300px;
+  color: #aeaeae;
+}
+.main-footer>div
+{
+  float: left;
+  padding: 5px;
+}
+.footer-copy
+{
+  margin-left: 60px;
+  width: 668px;
+  color: #9b9b9b;
+  font-size: 16px;
+  font-weight: 400px;
+}
+.footer-text
+{
+  margin-left: 50px;
+  margin-top: 5px;
+}
+.footer-text > a
+{
+  font-size: 20px;
+  font-weight: 600px;
+  color: #9b9b9b;
 }
