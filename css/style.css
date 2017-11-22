@@ -113,6 +113,7 @@ input[type="submit"]:hover
 {
   display: inline-block;
   margin-left: 39px;
+  position: relative;
 }
 .main-menu a
 {
@@ -121,25 +122,38 @@ input[type="submit"]:hover
   font-weight: 700;
   font-size: 14px;
   text-align: left;
-  position: relative;
 }
 .hidden-menu
 {
   position: absolute;
-  left: 930px;
-  top: 50px;
-  z-index: 3;
+  left: -25px;
+  top: 35px;
+  z-index: 5;
   background-color: black;
   color: white;
   font-size: 16px;
   font-weight: 500;
   list-style: none;
   padding: 5px;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 .hidden-menu li
 {
   padding: 5px 10px;
+}
+
+#menu-point:hover .hidden-menu
+{
+  visibility: visible;
+  opacity: 1;
+}
+.hidden-menu::after
+{
+  content: "";
+  /*position: absolute;
+  top: 100%;
+  left: 50%;*/
 }
 .lower-header
 {
