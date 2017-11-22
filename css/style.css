@@ -127,7 +127,7 @@ input[type="submit"]:hover
 {
   position: absolute;
   left: -25px;
-  top: 35px;
+  top: 40px;
   z-index: 5;
   background-color: black;
   color: white;
@@ -151,9 +151,14 @@ input[type="submit"]:hover
 .hidden-menu::after
 {
   content: "";
-  /*position: absolute;
-  top: 100%;
-  left: 50%;*/
+  position: absolute;
+  top: -25px;
+  left: 50px;
+  margin-left: -12px;
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+  z-index: 10;
 }
 .lower-header
 {
