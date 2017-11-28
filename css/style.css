@@ -152,7 +152,7 @@ input[type="submit"]:hover
 {
   content: "";
   position: absolute;
-  top: -25px;
+  top: -22px;
   left: 50px;
   margin-left: -12px;
   border-width: 12px;
