@@ -26,9 +26,9 @@ a:hover
 {
   color: #666666;
 }
-input[type="submit"]:hover
+input[type="submit"]:hover, .button:hover
 {
-  opacity: 0.7;
+  opacity: 0.8;
   cursor: pointer;
 }
 .color-mint
@@ -76,6 +76,7 @@ input[type="submit"]:hover
 {
   height: 541px;
   width: 100%;
+
 }
 .main-header
 {
@@ -104,6 +105,8 @@ input[type="submit"]:hover
   height: 21px;
   margin-top: 10px;
   margin-right: 78px;
+  position: relative;
+  z-index: 1;
 }
 .main-menu ul
 {
@@ -122,31 +125,41 @@ input[type="submit"]:hover
   font-weight: 700;
   font-size: 14px;
   text-align: left;
+
+}
+.menu-div
+{
+  position: absolute;
+  z-index: 2;
+  left: -100px;
+  top: -25px;
+  background-color: black;
+  width: 110px;
+  height: 41px;
+  text-align: center;
+  padding-top: 10px;
 }
 .hidden-menu
 {
   position: absolute;
-  left: -25px;
-  top: 40px;
-  z-index: 5;
+  left: -100px;
+  top: -85px;
   background-color: black;
   color: white;
   font-size: 16px;
   font-weight: 500;
   list-style: none;
   padding: 5px;
-  visibility: hidden;
-  opacity: 0;
+  z-index: 1;
+  transition: 1.1s;
 }
 .hidden-menu li
 {
   padding: 5px 10px;
 }
-
 #menu-point:hover .hidden-menu
 {
-  visibility: visible;
-  opacity: 1;
+  transform: translateY(110px);
 }
 .hidden-menu::after
 {
@@ -192,17 +205,97 @@ input[type="submit"]:hover
 {
   left: 1106px;
 }
+.slider{
+  height: 500px;
+  width: 1200px;
+  position: relative;
+}
+.slider::after
+{
+  content: "";
+  height: 500px;
+  width: 1200px;
+  position: absolute;
+  background-color: white;
+  left: 1200px;
+  z-index: 20;
+}
+.slider::before
+{
+  content: "";
+  height: 500px;
+  width: 1200px;
+  position: absolute;
+  background-color: white;
+  left: -1200px;
+  z-index: 20;
+}
+.slide{
+  height: 500px;
+  width: 1200px;
+  position: absolute;
+  left: -1200px;
+}
+.slide-right
+{
+  left: 1200px;
+}
+/*.slider .visible
+{
+    display: block;
+    left: -1200px;
 
+}*/
+.show-slide{
+  transform: translateX(1200px);
+  transition:	2s;
+}
+.hide-slide{
+  transform: translateX(2400px);
+  transition:	2s;
+}
+.show-slide-reverse{
+  transform: translateX(-1200px);
+  transition:	2s;
+}
+.hide-slide-reverse{
+  transform: translateX(-2400px);
+  transition:	2s;
+}
+/*.hide-slide{
+  transform: translateX(1200px);
+}*/
+/*.slide:hover{
+transform: translateX(100px);
+}*/
 .header-image
 {
   float: left;
   width: 500px;
-  height: 430px;
   position: absolute;
-  top: 60px;
   left:70px;
-  background: url(../images/black_chair.png) no-repeat center/cover;
 }
+.image-one
+{
+  background: url(../images/black_chair.png) no-repeat center/cover;
+  height: 430px;
+  top: 60px;
+}
+.image-two
+{
+  background: url(../images/red_chair.png) no-repeat center/cover;
+  height: 350px;
+  width: 420px;
+  left:100px;
+  top: 100px;
+}
+.image-three
+{
+  background: url(../images/orange.png) no-repeat center/cover;
+  height: 350px;
+  top: 120px;
+}
+
 .header-text
 {
   float: right;
@@ -211,7 +304,6 @@ input[type="submit"]:hover
   position: absolute;
   left: 528px;
   top: 98px;
-
 }
 .header-text h1
 {
@@ -231,7 +323,7 @@ input[type="submit"]:hover
 {
   margin-top: 15px;
 }
-input[type="submit"]
+.button, input[type="submit"]
 {
   background-color: #24baa0;
   border-radius: 10px;
@@ -273,17 +365,33 @@ input[type="submit"]
   font-size: 16px;
   font-weight: 600;
 }
-.midline
+.mid-white::after
 {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 35px;
   height: 7px;
   width: 138px;
   z-index: 3;
-  margin-bottom: 10px;
+  background-color: #27c7ab;
+
 }
 .middle-text
 {
   width: 338px;
   border: solid rgb(221, 221, 221) 1px;
+}
+.mid-text > h3::after
+{
+content: "";
+position: absolute;
+left: 0px;
+top: 50px;
+height: 7px;
+width: 138px;
+z-index: 3;
+background-color: #27c7ab;
 }
 .mid-text
 {
@@ -297,8 +405,14 @@ input[type="submit"]
   color: #000000;
   font-size: 16px;
   font-weight: 600;
-  padding-top: 20px;
+  padding-top: 30px;
+  position: relative;
 }
+.mid-text > p
+{
+  margin-top: 20px;
+}
+
 
 /*SEKCJA PRICE LIST*/
 #price-list
@@ -369,7 +483,7 @@ h4
   margin-top: 190px;
 }
 
-.p-submit > input
+.p-submit > .button
 {
   width: 122px;
   height: 34px;
@@ -379,7 +493,7 @@ h4
   top: 444px;
   left: 104px;
 }
-#white-submit
+#white-button
 {
   background-color: #ffffff;
   color: #27c7ab;
@@ -419,7 +533,191 @@ h4
 {
   border-color: #27c7ab;
 }
-/*sekcja footer*/
+/*sekcja calculator ----------------------------------------*/
+#calculator
+{
+  height: 500px;
+  width: 100%;
+}
+.container.calc
+{
+  height: 500px;
+}
+.calc-title-left
+{
+  text-align: left;
+  width: 50%;
+  height: 150px;
+  float: left;
+  padding-top: 60px;
+  position: relative;
+}
+.calc-title-left::after
+{
+  content: "";
+  position: absolute;
+  left: 68px;
+  top: 100px;
+  height: 8px;
+  width: 320px;
+  z-index: 3;
+  background-color: #27c7ab;
+  display: flex;
+  flex-direction:	column
+
+}
+.calc-title-right
+{
+  text-align: right;
+  padding-right: 68px;
+  width: 50%;
+  height: 150px;
+  float: left;
+  padding-top: 60px;
+  position: relative;
+}
+.calc-title-right::after
+{
+  content: "";
+  position: absolute;
+  right: 68px;
+  top: 100px;
+  height: 8px;
+  width: 320px;
+  z-index: 3;
+  background-color: #27c7ab;
+}
+.calculator-form
+{
+  width: 100%;
+  height: 350px;
+  display: flex;
+  padding: 0 68px;
+}
+div[class*="calc-form"]
+{
+  width: 33.3333%
+}
+
+.calc-form-image
+{
+  display: flex;
+  align-items:	center;
+  justify-content:	center;
+}
+.drop-down-list
+{
+  width: 100%;
+  height: 72px;
+  border: solid 1px #27c7ab;
+  font-size: 33px;
+  color: #666666;
+  font-weight: 300;
+  padding-left: 5px;
+  padding-top: 15px;
+  font-family: "Raleway", sans-serif;
+  position: relative;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.calc-arrow
+{
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  border-top: 20px solid #27c7ab;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+.calc-list
+{
+  background: white;
+  border: solid 1px #27c7ab;
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  height: 100px;
+  left: 0;
+  top: 75px;
+  display: none;
+  z-index: 5;
+
+}
+.visible
+{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+.calc-span
+{
+  font-size: 33px;
+}
+.calc-form-right
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:	center;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  color: #27c7ab;
+
+}
+.calc-price
+{
+  width: 100%;
+  height: 150px;
+}
+.calc-price-name
+{
+  float: left;
+  height: 150px;
+  background-color: white;
+  width: 210px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+
+}
+.calc-price-data
+{
+  float: right;
+  height: 150px;
+  width: 134px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+}
+.calc-sum
+{
+  clear: both;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  padding: 5px;
+  margin-top: -25px;
+}
+.fabric, .transport
+{
+  color: #666666;
+}
+.calc-sum-span
+{
+    float: right;
+}
+
+/*sekcja footer-------------------------------------------------*/
+
 #footer
 {
   height: 657px;

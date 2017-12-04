@@ -15,8 +15,9 @@
               </div>
               <nav class="main-menu">
                   <ul>
-                    <li id="menu-point" >
-                      <a href="#" >O FIRMIE</a>
+                    <li id="menu-point">
+                      <div class="menu-div"><a href="#" >O FIRMIE</a>
+                      </div>
                       <ul class="hidden-menu">
                         <li><a href="#">Aktualności</a></li>
                         <li><a href="#">Nasz Team</a></li>
@@ -29,22 +30,53 @@
               </nav>
           </header>
           <div class="lower-header clearfix">
-              <div class="left-bird color-mint cle">
+              <div class="left-bird color-mint">
                 <
               </div>
               <div class="right-bird color-mint">
                 >
               </div>
-              <div class="header-image">
-              </div>
-              <div class="header-text">
-                  <h1>SIT <span class="color-mint big">ON</span> OUR <span class="color-mint big">CHAIR</span></h1>
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                  </p>
-                  <div class="header-input clearfix">
-                    <input type="submit" name="submit" value="ZOBACZ WIĘCEJ">
-                  </div>
+              <div class="slider">
+                <div class="slide">
+                    <div class="header-image image-one">
+                    </div>
+                    <div class="header-text">
+                        <h1>SIT <span class="color-mint big">ON</span> OUR <span class="color-mint big">CHAIR</span></h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                        </p>
+                        <div class="header-input clearfix">
+                          <button class="button">ZOBACZ WIĘCEJ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="header-image image-two">
+                    </div>
+                    <div class="header-text">
+                        <h1>SIT <span class="color-mint big">ON</span> OUR <span class="color-mint big">CHAIR</span></h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="header-input clearfix">
+                          <button class="button">DRUGI SLAJD</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="header-image image-three">
+                    </div>
+                    <div class="header-text">
+                        <h1>SIT <span class="color-mint big">ON</span> OUR <span class="color-mint big">CHAIR</span></h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="header-input clearfix">
+                          <button class="button">TRZECI SLAJD</button>
+                        </div>
+                    </div>
+                </div>
+
               </div>
           </div>
       </div>
@@ -55,16 +87,12 @@
             <img src="images/box1_img.jpg" alt="white chair">
             <div class="mid-white">
               <a href="#">Chair CLAIR</a>
-              <div class="midline b-mint">
-              </div>
             </div>
           </div>
           <div class="middle-img clearfix">
             <img src="images/box2_img.jpg" alt="child on armchair">
             <div class="mid-white">
               <a href="#">Chair MARGARITA</a>
-              <div class="midline b-mint">
-              </div>
             </div>
           </div>
           <div class="middle-text clearfix">
@@ -104,7 +132,7 @@
                   Serwis
                 </div>
                 <div class="p-submit">
-                  <input type="submit" value="DOŁĄCZ">
+                  <button class="button">DOŁĄCZ</button>
                 </div>
             </div>
             <div class="price-second b-mint">
@@ -127,7 +155,7 @@
                   Gwarancja 5 lat
                 </div>
                 <div class="p-submit">
-                  <input id="white-submit" type="submit" value="DOŁĄCZ">
+                  <button class="button" id="white-button">DOŁĄCZ</button>
                 </div>
             </div>
             <div class="price-third b-lightgrey">
@@ -153,10 +181,80 @@
                   Porady projektanta
                 </div>
                 <div class="p-submit">
-                  <input type="submit" value="DOŁĄCZ">
+                  <button class="button">DOŁĄCZ</button>
                 </div>
             </div>
           </div>
+    </section>
+    <section id="calculator">
+      <div class="container clearfix calc b-lightgrey">
+        <div class="calc-title-left">
+          <h2>SKOMPONUJ SWOJE KRZESŁO</h2>
+        </div>
+        <div class="calc-title-right">
+          <h2>PODSUMOWANIE</h2>
+        </div>
+        <form class="calculator-form" action="index.html" method="post">
+          <div class="calc-form-left">
+              <div class="drop-down-list">
+                Wybierz rodzaj
+                <span class="calc-arrow"></span>
+                <ul class="calc-list chair">
+                   <li data-price="400">Chair Clair</li>
+                   <li data-price="500">Chair Margarita</li>
+                   <li data-price="600">Chair Selena</li>
+                </ul>
+              </div>
+              <div class="drop-down-list">
+                Wybierz rodzaj
+                <span class="calc-arrow"></span>
+                <ul class="calc-list color">
+                   <li>Czerwony</li>
+                   <li>Czarny</li>
+                   <li>Pomarańczowy</li>
+                </ul>
+              </div>
+              <div class="drop-down-list">
+                Wybierz rodzaj
+                <span class="calc-arrow"></span>
+                <ul class="calc-list fabric">
+                   <li data-price="150">Tkanina</li>
+                   <li data-price="300">Skóra</li>
+                </ul>
+              </div>
+              <div class="checkbox-group clearfix">
+                <span class="custom-checkbox">
+                  <input type="checkbox" name="" id="checkbox_1">
+                  <label for="checkbox_1"></label>
+                </span>
+                <span class="calc-span">Transport</span>
+              </div>
+          </div>
+          <div class="calc-form-image">
+              <img src="images/red_chair.png" alt="red chair">
+          </div>
+          <div class="calc-form-right">
+            <div class="calc-price">
+              <div class="calc-price-name">
+                <span class="chair-name">Twój fotel</span>
+                <span class="fabric"></span>
+                <span class="transport"></span>
+              </div>
+              <div class="calc-price-data">
+                <span class="chair-name-data"></span>
+                <span class="fabric-data"></span>
+                <span class="transport-data"></span>
+              </div>
+            </div>
+            <div class="calc-sum">
+              <span>SUMA</span>
+              <span class="calc-sum-span"></span>
+            </div>
+            <input type="submit" value="ZAMAWIAM">
+          </div>
+
+        </form>
+      </div>
     </section>
     <section id="footer" class="clearfix">
       <div class="container clearfix">
@@ -183,8 +281,8 @@
                 </div>
                   <div class="checkbox-group clearfix">
                     <span class="custom-checkbox">
-                      <input type="checkbox" name="" id="checkbox_1">
-                      <label for="checkbox_1"></label>
+                      <input type="checkbox" name="" id="checkbox_2">
+                      <label for="checkbox_2"></label>
                     </span>
                     <span>Zgadzam się na przetwarzanie</span>
                     <span>danych osobowych</span>
