@@ -641,8 +641,8 @@ div[class*="calc-form"]
   width: 100%;
   font-size: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content:space-around;
+  /*flex-direction: column;
+  justify-content:space-around;*/
   height: 100px;
   left: 0;
   top: 75px;

@@ -2,7 +2,6 @@
 var slides = document.querySelectorAll(".slide");
 var buttonPrev = document.querySelector(".left-bird");
 var buttonNext = document.querySelector(".right-bird");
-console.log(buttonNext);
 var counter = 0;
 // slides[0].classList.add("visible");
 slides[0].classList.add("show-slide");
@@ -72,12 +71,11 @@ for (var i = 0; i < images.length; i++) {
 //calculator---------------------------------------------------
 var arrow = document.querySelectorAll(".calc-arrow");
 var chairList = document.querySelectorAll(".calc-list.chair li");
-// var colorList = document.querySelectorAll(".calc-list.color");
 var fabricList = document.querySelectorAll(".calc-list.fabric li");
 var checkbox = document.querySelector('#checkbox_1');
 
 var chairNameSpan = document.querySelector(".chair-name");
-var chairFabricSpan = document.querySelector(".fabric");
+var chairFabricSpan = document.querySelector(".fabric-name");
 var TransportSpan = document.querySelector(".transport");
 
 var chairNameData = document.querySelector(".chair-name-data");
@@ -86,29 +84,39 @@ var TransportData = document.querySelector(".transport-data");
 var sumSpan = document.querySelector(".calc-sum-span");
 
 var sum = 0;
+var chairP = 0;
+var fabricP = 0;
+var transP = 0;
 
-console.log(chairList);
 
 for (var i = 0; i < arrow.length; i++) {
   arrow[i].addEventListener("click", function() {
     this.nextElementSibling.classList.toggle("visible");
   });
 }
+function getSum(chairP, transP, fabricP){
+  sum = (chairP + transP + fabricP);
+  sumSpan.innerHTML = sum + " zł";
+};
+getSum();
+
 for (var i = 0; i < chairList.length; i++) {
   chairList[i].addEventListener("click", function(){
   chairNameSpan.innerHTML = this.innerText;
   chairNameData.innerHTML = this.dataset.price;
-  sum = sum + Number(this.dataset.price);
-  sumSpan.innerHTML = sum + " zł";
+  chairP = Number(this.dataset.price);
+  getSum(chairP, transP, fabricP);
 });//dorobić funkcjonalność przy zmianie fotela zmiana ceny
 }
 
+
 for (var i = 0; i < fabricList.length; i++) {
-  fabricList[i].addEventListener("click", function() {
+  fabricList[i].addEventListener("click", function(){
     chairFabricSpan.innerHTML = this.innerText;
     chairFabricData.innerHTML = this.dataset.price;
-    sum = sum + Number(this.dataset.price);
-    sumSpan.innerHTML = sum + " zł";
+    fabricP = Number(this.dataset.price);
+    getSum(chairP, transP, fabricP);
+
   });//dorobić funkcjonalność przy zmianie fotela zmiana ceny
 }
 
@@ -116,12 +124,13 @@ checkbox.addEventListener("change", function(){
     if (checkbox.checked === true) {
     TransportSpan.innerText = "Transport";
     TransportData.innerText = 80;
-    sum = sum + 80;
+    transP = 80;
     }
     else {
     TransportSpan.innerText = "";
     TransportData.innerText = "";
-    sum = sum - 80;
+    transP = 0;
     }
-    sumSpan.innerHTML = sum + " zł";
+    getSum(chairP, transP, fabricP);
+
 });
